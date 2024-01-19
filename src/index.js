@@ -15,6 +15,17 @@ dotenv.config({
 
 connectDB()
 
+// when database is connected  using async a promise is returned 
+.then( ()=>{
+    app.listen(process.env.PORT || 8000, ()=>{
+        console.log(`Server is running at Port: ${process.env.PORT}`)
+    })
+})
+
+.catch((err)=>{
+    console.log(`MongoDb  connection Failed !!!`, err)
+})
+
 
 
 
