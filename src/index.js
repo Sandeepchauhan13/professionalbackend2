@@ -7,6 +7,7 @@ import dotenv from "dotenv";
 // import mongoose from "mongoose";
 // import { DB_NAME } from "./constants";
 import connectDB from "./db/index.js";
+import {app} from './app.js';
 
 
 dotenv.config({
@@ -17,7 +18,7 @@ connectDB()
 
 // when database is connected  using async a promise is returned 
 .then( ()=>{
-    app.listen(process.env.PORT || 8000, ()=>{
+    app.listen(process.env.PORT || 5000, ()=>{
         console.log(`Server is running at Port: ${process.env.PORT}`)
     })
 })

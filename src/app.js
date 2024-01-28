@@ -21,5 +21,17 @@ app.use(cookieParser())
 // two methods of export express
 // export default express;
 
+import userRouter from './routes/user.routes.js'
 
+// routes declaration 
+// #imp yaha app.get karke bcoz same location main routes and controller 
+// #now separate then we use app.use middleware needed 
+// pehle path api/v1/users then kon sa router activate karvana hai 
+app.use("/api/v1/users", userRouter)
+
+// http://localhost:5000/api/v1/users/register 
+// http://localhost:5000/api/v1/users/login 
+
+// two methods of export express
+// export default express;
 export {app}
